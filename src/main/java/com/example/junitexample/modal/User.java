@@ -1,7 +1,6 @@
 package com.example.junitexample.modal;
 
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
