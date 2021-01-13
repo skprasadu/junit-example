@@ -1,8 +1,6 @@
 package com.example.junitexample.controllers;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -37,18 +35,15 @@ public class TestWebApp extends SpringBootHelloWorldTests {
 
 	@Test
 	public void testEmployee() throws Exception {
-		/*mockMvc.perform(get("/employee")).andExpect(status().isOk())
-				.andExpect(content().contentType("application/json"))
-				.andExpect(jsonPath("$.name").value("John")).andExpect(jsonPath("$.designation").value("Developer"))
-				.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(4000));*/
 		
-		Employee emp = new Employee("Altaf", "Boss", 0);
+		Employee emp = new Employee("1", "Altaf", "Boss", 0);
 		
 		when(employeeService.getEmployee(1)).thenReturn(emp);
 
 		mockMvc.perform(get("/employee/1")).andExpect(status().isOk())
 			.andExpect(content().contentType("application/json"))
-			.andExpect(jsonPath("$.name").value("Altaf"));
+			.andExpect(jsonPath("$.name").value("Altaf")).andExpect(jsonPath("$.designation").value("Boss"))
+			.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value("0.0"));
 	}
 
 }

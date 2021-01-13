@@ -6,8 +6,8 @@ public class Employee {
 	private String designation;
 	private double salary;
 
-	public Employee(String name, String designation, double salary) {
-		
+	public Employee(String id, String name, String designation, double salary) {
+		this.empId = id;
 		this.name = name;
 		this.designation = designation;
 		this.salary = salary;
