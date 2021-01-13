@@ -20,7 +20,7 @@ public class TestController {
 	}
 
 	@RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
-	public Employee firstPage(@PathVariable int id) {
+	public Employee firstPage(@PathVariable String id) {
 		
 		return employeeService.getEmployee(id);
 	}

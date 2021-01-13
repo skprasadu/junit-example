@@ -4,5 +4,5 @@ import com.example.junitexample.modal.Employee;
 
 public interface EmployeeService {
 	
-	Employee getEmployee(int id);
+	Employee getEmployee(String id);
 }

@@ -38,7 +38,7 @@ public class TestWebApp extends SpringBootHelloWorldTests {
 		
 		Employee emp = new Employee("1", "Altaf", "Boss", 0);
 		
-		when(employeeService.getEmployee(1)).thenReturn(emp);
+		when(employeeService.getEmployee("1")).thenReturn(emp);
 
 		mockMvc.perform(get("/employee/1")).andExpect(status().isOk())
 			.andExpect(content().contentType("application/json"))
